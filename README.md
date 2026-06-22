@@ -12,7 +12,6 @@ The application provides ATS-based resume analysis, AI-powered suggestions using
 - REST API
 - MySQL
 - Groq AI API
-- React
 
 ## Features
 
