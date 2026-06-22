@@ -1,58 +1,82 @@
 # ATS Resume Analyzer
 
-ATS Resume Analyzer is an AI-powered application that helps users create, analyze and improve their resumes according to specific job requirements.
+A backend application that analyzes resumes against job descriptions using Groq AI. Gives ATS scores, highlights gaps, and suggests improvements so users can tailor their resumes before applying.
 
-The application provides ATS-based resume analysis, AI-powered suggestions using Groq AI, resume building features and live preview functionality to help users create better resumes.
+---
 
-## Technologies Used
+## Tech Stack
 
-- Java
-- Spring Boot
-- Spring Security
-- REST API
-- MySQL
+- Java, Spring Boot
 - Groq AI API
+- Spring Security + JWT + OAuth 2.0
+- MySQL, Spring Data JPA
+- Maven
+
+---
 
 ## Features
 
-- User authentication and secure access
-- Resume builder for creating professional resumes
-- Live resume preview while editing
-- Resume analysis based on job description
-- ATS score evaluation
-- AI-powered resume improvement suggestions using Groq AI
-- Resume content recommendations
-- Manage and store user resume details
+- Resume builder — store and manage resume data
+- Job description input for targeted analysis
+- ATS score based on resume vs JD match
+- Groq AI powered improvement suggestions
+- Live resume preview
+- Google login via OAuth 2.0
+- JWT secured endpoints
 
-## Application Workflow
+---
 
-1. User creates or adds resume details
-2. User provides job description
-3. Application analyzes resume according to job requirements
-4. Groq AI generates improvement suggestions
-5. User can update resume based on recommendations
-6. User can preview final resume before download/use
+## How it works
+
+1. User adds resume details
+2. Pastes the job description
+3. App runs analysis and generates ATS score
+4. Groq AI gives specific improvement suggestions
+5. User updates resume and previews before use
+
+---
 
 ## Project Structure
 
-The project follows layered architecture:
+```
+src/
+├── controller/     API request handling
+├── service/        Business logic + Groq AI calls
+├── repository/     Database layer (JPA)
+├── entity/         DB models
+├── dto/            Data transfer objects
+└── config/         Security and OAuth config
+```
 
-Controller Layer  
-- Handles API requests and responses
+---
 
-Service Layer  
-- Contains business logic
+## Setup
 
-Repository Layer  
-- Handles database operations
-
-Entity Layer  
-- Represents database models
-
-## How To Run
-
-### 1. Clone the repository
-### 2. First Add your db and api details
-
+1. Clone the repo
 ```bash
 git clone https://github.com/Lokeshsijapati/AtsResume.git
+cd AtsResume
+```
+
+2. Add your credentials in `application.properties`
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/ats_db
+spring.datasource.username=YOUR_USERNAME
+spring.datasource.password=YOUR_PASSWORD
+
+groq.api.key=YOUR_GROQ_API_KEY
+
+spring.security.oauth2.client.registration.google.client-id=YOUR_CLIENT_ID
+spring.security.oauth2.client.registration.google.client-secret=YOUR_CLIENT_SECRET
+```
+
+3. Run
+```bash
+mvn spring-boot:run
+```
+
+---
+
+## Contact
+
+Lokesh Sijapati — [GitHub](https://github.com/Lokeshsijapati)
