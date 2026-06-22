@@ -52,6 +52,7 @@ Entity Layer
 ## How To Run
 
 ### 1. Clone the repository
+### 2. First Add your db and api details
 
 ```bash
 git clone https://github.com/Lokeshsijapati/AtsResume.git
