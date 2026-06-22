@@ -75,8 +75,3 @@ spring.security.oauth2.client.registration.google.client-secret=YOUR_CLIENT_SECR
 mvn spring-boot:run
 ```
 
----
-
-## Contact
-
-Lokesh Sijapati — [GitHub](https://github.com/Lokeshsijapati)
